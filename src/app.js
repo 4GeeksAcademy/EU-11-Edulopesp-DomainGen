@@ -5,26 +5,22 @@ import "./style.css";
 window.onload = function() {
   const phrases = document.querySelectorAll(".phrase");
 
-  phrases.forEach(phrase => {
-    phrase.innerHTML = generateDomain();
-  });
-};
-const genRandomDomain = arr => arr[Math.floor(Math.random() * arr.length)];
-//write your code here
-const generateDomain = () => {
-  const owner = [
-    "eminems",
-    "chewbaccas",
-    "thedudefromapple",
-    "mygirlfriends",
-    "yourdoctors"
+  const genRandomDomain = arr => arr[Math.floor(Math.random() * arr.length)];
+  const shuffleArray = arr => arr.sort(() => Math.random() - 0.5);
+
+  const randomDomains = [
+    "whereeminemwritessongs",
+    "chewbaccasdreamplace",
+    "thedudefromappleportifolio",
+    "somewherethateverybodylikes",
+    "yourdoctorsplace"
   ];
+  const extension = [".com", ".us", ".net", ".io", ".pt"];
+  const shuffledDomains = shuffleArray(randomDomains);
 
-  const place = ["dream", "nightmare", "goal"];
-  const where = ["website", "project", "place", "portifolio"];
-  const extension = [".com", ".us", ".net", ".io", ".pt", ".com.br"];
-
-  return `www.${genRandomDomain(owner)}${genRandomDomain(
-    place
-  )}${genRandomDomain(where)}${genRandomDomain(extension)}`;
+  phrases.forEach((phrase, index) => {
+    phrase.innerHTML = `www.${shuffledDomains[index]}${genRandomDomain(
+      extension
+    )}`;
+  });
 };
