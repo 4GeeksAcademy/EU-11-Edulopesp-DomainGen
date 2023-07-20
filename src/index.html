@@ -4,23 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Domain</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container-fluid">
       <div class="row d-flex">
         <div class="col-12 container-fluid text-center">
-          <h1 class="mt-5">Chose your Domain:</h1>
-          <p class="phrase">Random Domain</p>
-          <p class="phrase">Random Domain</p>
-          <p class="phrase">Random Domain</p>
-          <p class="phrase">Random Domain</p>
-          <p class="phrase">Random Domain</p>
-          <button class="button" onClick="window.location.reload();">
+          <h1 class="mt-5">Choose your Domain:</h1>
+          <div class="phrases-container" id="phrasesContainer"></div>
+          <button class="button" onClick="generateDomains()">
             New Domain
           </button>
         </div>
       </div>
-      .
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
